@@ -389,6 +389,194 @@ func (x *ResponceGetAll) GetCustomers() []*Customer {
 	return nil
 }
 
+type Request struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to Req:
+	//	*Request_ReqAdd
+	//	*Request_ReqGet
+	//	*Request_ReqGetAll
+	Req isRequest_Req `protobuf_oneof:"req"`
+}
+
+func (x *Request) Reset() {
+	*x = Request{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_Customer_proto_msgTypes[7]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Request) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Request) ProtoMessage() {}
+
+func (x *Request) ProtoReflect() protoreflect.Message {
+	mi := &file_Customer_proto_msgTypes[7]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Request.ProtoReflect.Descriptor instead.
+func (*Request) Descriptor() ([]byte, []int) {
+	return file_Customer_proto_rawDescGZIP(), []int{7}
+}
+
+func (m *Request) GetReq() isRequest_Req {
+	if m != nil {
+		return m.Req
+	}
+	return nil
+}
+
+func (x *Request) GetReqAdd() *RequestAdd {
+	if x, ok := x.GetReq().(*Request_ReqAdd); ok {
+		return x.ReqAdd
+	}
+	return nil
+}
+
+func (x *Request) GetReqGet() *RequestGet {
+	if x, ok := x.GetReq().(*Request_ReqGet); ok {
+		return x.ReqGet
+	}
+	return nil
+}
+
+func (x *Request) GetReqGetAll() *RequestGetAll {
+	if x, ok := x.GetReq().(*Request_ReqGetAll); ok {
+		return x.ReqGetAll
+	}
+	return nil
+}
+
+type isRequest_Req interface {
+	isRequest_Req()
+}
+
+type Request_ReqAdd struct {
+	ReqAdd *RequestAdd `protobuf:"bytes,1,opt,name=reqAdd,proto3,oneof"`
+}
+
+type Request_ReqGet struct {
+	ReqGet *RequestGet `protobuf:"bytes,2,opt,name=reqGet,proto3,oneof"`
+}
+
+type Request_ReqGetAll struct {
+	ReqGetAll *RequestGetAll `protobuf:"bytes,3,opt,name=reqGetAll,proto3,oneof"`
+}
+
+func (*Request_ReqAdd) isRequest_Req() {}
+
+func (*Request_ReqGet) isRequest_Req() {}
+
+func (*Request_ReqGetAll) isRequest_Req() {}
+
+type Responce struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	// Types that are assignable to Resp:
+	//	*Responce_RespAdd
+	//	*Responce_RespGet
+	//	*Responce_RespGetAll
+	Resp isResponce_Resp `protobuf_oneof:"resp"`
+}
+
+func (x *Responce) Reset() {
+	*x = Responce{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_Customer_proto_msgTypes[8]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *Responce) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*Responce) ProtoMessage() {}
+
+func (x *Responce) ProtoReflect() protoreflect.Message {
+	mi := &file_Customer_proto_msgTypes[8]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use Responce.ProtoReflect.Descriptor instead.
+func (*Responce) Descriptor() ([]byte, []int) {
+	return file_Customer_proto_rawDescGZIP(), []int{8}
+}
+
+func (m *Responce) GetResp() isResponce_Resp {
+	if m != nil {
+		return m.Resp
+	}
+	return nil
+}
+
+func (x *Responce) GetRespAdd() *ResponceAdd {
+	if x, ok := x.GetResp().(*Responce_RespAdd); ok {
+		return x.RespAdd
+	}
+	return nil
+}
+
+func (x *Responce) GetRespGet() *ResponceAdd {
+	if x, ok := x.GetResp().(*Responce_RespGet); ok {
+		return x.RespGet
+	}
+	return nil
+}
+
+func (x *Responce) GetRespGetAll() *ResponceAdd {
+	if x, ok := x.GetResp().(*Responce_RespGetAll); ok {
+		return x.RespGetAll
+	}
+	return nil
+}
+
+type isResponce_Resp interface {
+	isResponce_Resp()
+}
+
+type Responce_RespAdd struct {
+	RespAdd *ResponceAdd `protobuf:"bytes,1,opt,name=respAdd,proto3,oneof"`
+}
+
+type Responce_RespGet struct {
+	RespGet *ResponceAdd `protobuf:"bytes,2,opt,name=respGet,proto3,oneof"`
+}
+
+type Responce_RespGetAll struct {
+	RespGetAll *ResponceAdd `protobuf:"bytes,3,opt,name=respGetAll,proto3,oneof"`
+}
+
+func (*Responce_RespAdd) isResponce_Resp() {}
+
+func (*Responce_RespGet) isResponce_Resp() {}
+
+func (*Responce_RespGetAll) isResponce_Resp() {}
+
 var File_Customer_proto protoreflect.FileDescriptor
 
 var file_Customer_proto_rawDesc = []byte{
@@ -422,7 +610,32 @@ var file_Customer_proto_rawDesc = []byte{
 	0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x1a,
 	0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63,
 	0x65, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x52, 0x09, 0x63, 0x75, 0x73, 0x74,
-	0x6f, 0x6d, 0x65, 0x72, 0x73, 0x42, 0x1d, 0x5a, 0x1b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
+	0x6f, 0x6d, 0x65, 0x72, 0x73, 0x22, 0xc1, 0x01, 0x0a, 0x07, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x36, 0x0a, 0x06, 0x72, 0x65, 0x71, 0x41, 0x64, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x1c, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72,
+	0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x41, 0x64, 0x64, 0x48,
+	0x00, 0x52, 0x06, 0x72, 0x65, 0x71, 0x41, 0x64, 0x64, 0x12, 0x36, 0x0a, 0x06, 0x72, 0x65, 0x71,
+	0x47, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1c, 0x2e, 0x43, 0x75, 0x73, 0x74,
+	0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71,
+	0x75, 0x65, 0x73, 0x74, 0x47, 0x65, 0x74, 0x48, 0x00, 0x52, 0x06, 0x72, 0x65, 0x71, 0x47, 0x65,
+	0x74, 0x12, 0x3f, 0x0a, 0x09, 0x72, 0x65, 0x71, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x18, 0x03,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x1f, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f,
+	0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x47,
+	0x65, 0x74, 0x41, 0x6c, 0x6c, 0x48, 0x00, 0x52, 0x09, 0x72, 0x65, 0x71, 0x47, 0x65, 0x74, 0x41,
+	0x6c, 0x6c, 0x42, 0x05, 0x0a, 0x03, 0x72, 0x65, 0x71, 0x22, 0xc9, 0x01, 0x0a, 0x08, 0x52, 0x65,
+	0x73, 0x70, 0x6f, 0x6e, 0x63, 0x65, 0x12, 0x39, 0x0a, 0x07, 0x72, 0x65, 0x73, 0x70, 0x41, 0x64,
+	0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d,
+	0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x63, 0x65, 0x41, 0x64, 0x64, 0x48, 0x00, 0x52, 0x07, 0x72, 0x65, 0x73, 0x70, 0x41, 0x64,
+	0x64, 0x12, 0x39, 0x0a, 0x07, 0x72, 0x65, 0x73, 0x70, 0x47, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x1d, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x73, 0x65,
+	0x72, 0x76, 0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x63, 0x65, 0x41, 0x64,
+	0x64, 0x48, 0x00, 0x52, 0x07, 0x72, 0x65, 0x73, 0x70, 0x47, 0x65, 0x74, 0x12, 0x3f, 0x0a, 0x0a,
+	0x72, 0x65, 0x73, 0x70, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x1d, 0x2e, 0x43, 0x75, 0x73, 0x74, 0x6f, 0x6d, 0x65, 0x72, 0x5f, 0x73, 0x65, 0x72, 0x76,
+	0x69, 0x63, 0x65, 0x2e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x63, 0x65, 0x41, 0x64, 0x64, 0x48,
+	0x00, 0x52, 0x0a, 0x72, 0x65, 0x73, 0x70, 0x47, 0x65, 0x74, 0x41, 0x6c, 0x6c, 0x42, 0x06, 0x0a,
+	0x04, 0x72, 0x65, 0x73, 0x70, 0x42, 0x1d, 0x5a, 0x1b, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e,
 	0x63, 0x6f, 0x6d, 0x2f, 0x69, 0x6c, 0x6f, 0x76, 0x65, 0x70, 0x69, 0x74, 0x73, 0x61, 0x2f, 0x70,
 	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
@@ -439,7 +652,7 @@ func file_Customer_proto_rawDescGZIP() []byte {
 	return file_Customer_proto_rawDescData
 }
 
-var file_Customer_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
+var file_Customer_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
 var file_Customer_proto_goTypes = []interface{}{
 	(*Customer)(nil),       // 0: Customer_service.Customer
 	(*RequestAdd)(nil),     // 1: Customer_service.RequestAdd
@@ -448,14 +661,22 @@ var file_Customer_proto_goTypes = []interface{}{
 	(*ResponceGet)(nil),    // 4: Customer_service.ResponceGet
 	(*RequestGetAll)(nil),  // 5: Customer_service.RequestGetAll
 	(*ResponceGetAll)(nil), // 6: Customer_service.ResponceGetAll
+	(*Request)(nil),        // 7: Customer_service.Request
+	(*Responce)(nil),       // 8: Customer_service.Responce
 }
 var file_Customer_proto_depIdxs = []int32{
 	0, // 0: Customer_service.ResponceGetAll.customers:type_name -> Customer_service.Customer
-	1, // [1:1] is the sub-list for method output_type
-	1, // [1:1] is the sub-list for method input_type
-	1, // [1:1] is the sub-list for extension type_name
-	1, // [1:1] is the sub-list for extension extendee
-	0, // [0:1] is the sub-list for field type_name
+	1, // 1: Customer_service.Request.reqAdd:type_name -> Customer_service.RequestAdd
+	3, // 2: Customer_service.Request.reqGet:type_name -> Customer_service.RequestGet
+	5, // 3: Customer_service.Request.reqGetAll:type_name -> Customer_service.RequestGetAll
+	2, // 4: Customer_service.Responce.respAdd:type_name -> Customer_service.ResponceAdd
+	2, // 5: Customer_service.Responce.respGet:type_name -> Customer_service.ResponceAdd
+	2, // 6: Customer_service.Responce.respGetAll:type_name -> Customer_service.ResponceAdd
+	7, // [7:7] is the sub-list for method output_type
+	7, // [7:7] is the sub-list for method input_type
+	7, // [7:7] is the sub-list for extension type_name
+	7, // [7:7] is the sub-list for extension extendee
+	0, // [0:7] is the sub-list for field type_name
 }
 
 func init() { file_Customer_proto_init() }
@@ -548,6 +769,40 @@ func file_Customer_proto_init() {
 				return nil
 			}
 		}
+		file_Customer_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Request); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_Customer_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*Responce); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+	}
+	file_Customer_proto_msgTypes[7].OneofWrappers = []interface{}{
+		(*Request_ReqAdd)(nil),
+		(*Request_ReqGet)(nil),
+		(*Request_ReqGetAll)(nil),
+	}
+	file_Customer_proto_msgTypes[8].OneofWrappers = []interface{}{
+		(*Responce_RespAdd)(nil),
+		(*Responce_RespGet)(nil),
+		(*Responce_RespGetAll)(nil),
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -555,7 +810,7 @@ func file_Customer_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_Customer_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   7,
+			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
