@@ -1,4 +1,4 @@
-module github.com/ilovepitsa/protobbuf
+module github.com/ilovepitsa/protobufForTestCase
 
 go 1.18
 
